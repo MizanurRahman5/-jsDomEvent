@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegrats
+    </title>
+</head>
+<body>
+    <section>
+        <h1>Explore Delegrats </h1>
+        <ul id="list-container">
+            <li class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, dignissimos.</li>
+            <li class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, dignissimos.</li>
+            <li class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, dignissimos.</li>
+            <li class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, dignissimos.</li>
+            <li class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, dignissimos.</li>
+        </ul>
+    </section>
+    <textarea name="" id="text-box" cols="50" rows="10"></textarea><br>
+    <button id="add-btn" style="padding: 10px 50px;">Add</button>
+    <script>
+
+      const items =  document.getElementById("list-container").addEventListener('click', function(event){
+        event.target.parentNode.removeChild(event.target);
+      })
+
+
+
+    //   for (const item of items){
+        // item.addEventListener('click', function(event){
+        //     // console.log(event.target.parentNode)
+        //     event.target.parentNode.removeChild(event.target);
+            
+        // })
+
+
+      document.getElementById('add-btn').addEventListener('click', function(){
+        const textBox = document.getElementById('text-box');
+        const newText = textBox.value;
+        const listContainer = document.getElementById('list-container');
+        const li = document.createElement('li');
+        li.innerText = newText;
+        li.classList.add('item');
+        listContainer.appendChild(li);
+        textBox.value = ''
+      })
+
+    </script>
+</body>
+</html>
